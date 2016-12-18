@@ -18,11 +18,11 @@ public class Practice {
         // TODO code application logic here
         int[] data = {1,4,3,2,0,3,8,5,10,6,3,5};
         int[] output;
-         output = Sorting.QuickSort(data);
-         Sorting.Print(output);
+        output = Sorting.QuickSort(data);
+       Sorting.Print(output);
          System.out.println();
-         output = Sorting.BubbleSort(data);
-         Sorting.Print(output);
+       //  output = Sorting.BubbleSort(data);
+       //  Sorting.Print(output);
     }
     
 }
