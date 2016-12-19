@@ -51,8 +51,21 @@ class FindRepeatedElement {
     }
     public static int FindRepeatedElementRandom(int input[])
     {
-        
-         
+        if(input == null || input.length < 2)
+        {
+            return -1;
+        }
+        for(int i=0;i<input.length;i++)
+        {
+            for(int j = i+1;i<input.length;j++)
+            {
+                if(input[i] == input[j])
+                {
+                    return input[i];
+                }
+            }
+        }
+        return -1;
     }
 
     public static void main(String args[]) {
