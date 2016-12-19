@@ -80,46 +80,10 @@ public class IsSorted {
         System.out.println(IsSorted(new int[] {1,2,2,3}));   
 
  */
-    public static int[] RotateNTime(int input[],int numberOFTimes)
-    {
-        if(input == null || numberOFTimes < 0)
-        {
-            System.out.println("Invalid input elements");
-            return null;
-        }
-        int index = input.length - (numberOFTimes % input.length);
-        input = reverse(input,index,input.length-1);
-        input = reverse(input,0,index-1);
-        input = reverse(input,0,input.length-1);
-        return input;
-                
-    }
-    
-    public static int[] reverse(int input[],int start,int end)
-    {
-        if(input == null)
-        {
-            System.out.println("Null array");
-            return null;
-        }
-        if(input.length < 2)
-        {
-            return input;
-        }
-        while(start <= end)
-        {
-            int temp = input[start];
-            input[start] = input[end];
-            input[end] = temp;
-            start++;
-            end--;       
-        } // for
-        return input;
-    } // reverse
     
     public static void main(String args[])
     {
-        int output[] = RotateNTime(new int[] {0,1,2,3,4,5,6},12);
+      int output[] = null;
         for(int i =0 ;i<output.length;i++)
         {
             System.out.print(output[i]);
