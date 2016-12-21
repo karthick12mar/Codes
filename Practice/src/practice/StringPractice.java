@@ -50,22 +50,38 @@ public class StringPractice {
         if(input == null || input.length() < 2)
             return input;
         char output[] = input.toCharArray();
+        int count[] = new int[26];
         for(int i =0;i<output.length;i++)
         {
+         /*   int index = i;
             for(int j=i+1;j<output.length;j++)
             {
-                if(output[i]>output[j])
+                if(output[index]>output[j])
                 {
-                    char temp = output[i];
-                    output[i] = output[j];
-                    output[j] = temp;
+                   index = j;
                 }
-                
             }
-          //  System.out.println(output[i]);
+            char temp = output[index];
+            output[index] = output[i];
+            output[i] = temp;
+            
+          //  System.out.println(output[i]);*/
+            count[(int)(input.charAt(i)) - (int)('a')]++;
         }
-        input = String.valueOf(output);
-        return input;
+        String output1 = "";
+        for(int i =0;i<26;i++)
+        {
+            while(count[i]>0)
+            {
+ //               System.out.print(i+" "+count[i]);
+ //               System.out.println(" " + Character.toString((char)((int)('a')+i)));
+                String temp = Character.toString((char)((int)('a')+i));
+                output1 = output1.concat(temp);
+                count[i]--;
+            }
+        }
+//       System.out.println(output1);
+        return output1;
     }
     
     // 

@@ -45,12 +45,31 @@ public class Mergearray {
         }
         return output;
     }
+    public static int[] Mergearrayin(int[] input,int m)
+    {
+        int i = 0,j = m+1;
+        while(i <= m && j <= input.length)
+        {
+            if(input[i] < input[j])
+            {
+                i++;
+            }
+            else 
+            {
+                j++;
+            }
+        }
+        return input;
+    }
+            
     public static void main(String args[])
     {
         int array1[] = {0,1,2,3,4,5};
         int array2[] = {0,1,2,3};
+        int array3[] = {0,6,7,8,9,1,2,3,4,5};
         int output[] = new int[array1.length+array2.length];
         output = Mergearray(array1,array2);
+        array3 = Mergearrayin(array3,4);
         for(int i =0;i<output.length;i++)
         System.out.print(" "+output[i]);
     }

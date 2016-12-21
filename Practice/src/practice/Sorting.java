@@ -113,7 +113,7 @@ class Sorting {
     public static void Quick(int[] input, int lowerindex, int higherindex) {
 
         int i = lowerindex, j = higherindex;
-        int pivot = input[lowerindex+(higherindex-lowerindex)/2];
+        int pivot = input[lowerindex + (higherindex-lowerindex)/2];
 
         while (i <= j) {
             //  {1,4,3,2,0,3,5,5,3,6,10,8};
@@ -123,6 +123,7 @@ class Sorting {
             while (input[j] > pivot ) {
                 j--;
             }
+            
             if(i<=j)
             {
             int temp = input[i];
@@ -130,6 +131,9 @@ class Sorting {
             input[j--] = temp;
             }
         }
+        System.out.print(pivot+" - "+lowerindex+"<"+j+" "+higherindex +">" + i+" -->" );
+        Print(input);
+        System.out.println();
         if (lowerindex < j) {
             Quick(input, lowerindex, j);
         }
@@ -142,5 +146,13 @@ class Sorting {
         for (int i = 0; i < input.length; i++) {
             System.out.print(" " + input[i] + " ");
         }
+    }
+    public static void main(String args[])
+    {
+        int input[] = { 2,3,7,1,2,4,8,0};
+        Print(input);
+        System.out.println();
+        input = QuickSort(input);
+        Print(input);
     }
 }
