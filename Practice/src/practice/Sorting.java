@@ -105,6 +105,73 @@ class Sorting {
         return output;
     }
 
+    public static int[] MergeSort1(int[] input,int initial,int left,int right) {
+        if (input.length < 2) {
+            return input;
+        }
+        /*
+        int middle = input.length / 2;
+        int[] left = new int[middle];
+        int[] right = new int[input.length - middle];
+        MergeSort(left);
+        MergeSort(right);
+        input = Merge(left, right, input);
+        return input;
+        */
+        Print(input);
+        System.out.println(" -- "+initial+" "+left+" "+right);
+        
+        if(initial < left)
+        {
+            input = MergeSort1(input,initial,initial+(left-initial)/2,left);
+            input = MergeSort1(input,left+1,left+(right - left)/2,right);
+        } 
+        System.out.println(" -- "+initial+" "+left+" "+right+"->");
+        input = Merge1(input,initial,left,right);
+        Print(input);
+       System.out.println("<-");
+        return input;
+    }
+    
+    public static int[] Merge1(int[] input,int initial,int left, int right) {
+
+        if(input[left] <= input[left+1])
+        {
+            return input;
+        }
+        int i = initial,j=left+1;
+        
+        while (i<=left && input[left] > input[left+1])
+        {
+            if (input[i] > input[j]) 
+            {
+                int temp = input[j];
+                input[j] = input[i];
+                input[i] = temp;
+                for(int k = j;k<right;k++)
+                {
+                    if(input[k]>input[k+1])
+                    {
+                        temp = input[k];
+                        input[k] = input[k+1];
+                        input[k+1] = temp;
+                        
+                    }
+                }
+            }
+            i++;
+        }
+        return input;
+    }
+    
+    public static void main(String args[])
+    {
+        int input[] = { 2,3,7,1,2,4,8,0};
+        Print(input);
+        System.out.println();
+        input = MergeSort1(input,0,(input.length-1)/2,input.length-1);
+        Print(input);
+    }
     public static int[] QuickSort(int[] input) {
         Quick(input, 0, input.length-1);
         return input;
@@ -147,12 +214,12 @@ class Sorting {
             System.out.print(" " + input[i] + " ");
         }
     }
-    public static void main(String args[])
+    /*public static void main(String args[])
     {
         int input[] = { 2,3,7,1,2,4,8,0};
         Print(input);
         System.out.println();
         input = QuickSort(input);
         Print(input);
-    }
+    }*/
 }

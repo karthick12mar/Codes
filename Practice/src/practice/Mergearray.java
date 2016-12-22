@@ -71,7 +71,7 @@ public class Mergearray {
         output = Mergearray(array1,array2);
         array3 = Mergearrayin(array3,4);
         for(int i =0;i<output.length;i++)
-        System.out.print(" "+output[i]);
+            System.out.print(" "+output[i]);
     }
 }
     
