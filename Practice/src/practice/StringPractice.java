@@ -83,7 +83,7 @@ public class StringPractice {
 //       System.out.println(output1);
         return output1;
     }
-    
+     
     // 
     public static void main(String args[])
     {
