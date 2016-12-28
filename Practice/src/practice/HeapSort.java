@@ -40,9 +40,9 @@ public class HeapSort {
         {
 
             largest = right;
-
         }
-//System.out.println(" " + left + " " + right +" "+largest+ " "+i);        
+//        Print(a);
+//        System.out.println(" -- " + left + " " + right +" "+largest+ " "+i);        
         if (largest != i) {
             int temp = a[largest];
             a[largest] = a[i];
@@ -52,15 +52,19 @@ public class HeapSort {
 
         return a;
     }
-
+static void Print(int[] input) {
+        for (int i = 0; i < input.length; i++) {
+            System.out.print(" " + input[i] + " ");
+        }
+    }
     static int[] sort(int input[]) {
         input = buildheap(input);
- /*       for (int j = 0; j < input.length; j++) 
+       for (int j = 0; j < input.length; j++) 
             {
             System.out.print(input[j] + " ");
             }
                 System.out.println();
-*/
+
         for (int i = size; i >= 0; i--) 
         {
 /*            for (int j = 0; j < input.length; j++) 
@@ -78,7 +82,7 @@ public class HeapSort {
     }
 
     public static void main(String[] args) {
-        int[] a1 = {4, 1, 3, 2, 16, 9, 10, 14, 8, 7};
+        int[] a1 = {0,1,2,3,4,5};
         a1 = sort(a1);
         for (int i = 0; i < a1.length; i++) {
             System.out.print(a1[i] + " ");
