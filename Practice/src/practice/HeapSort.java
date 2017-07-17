@@ -27,7 +27,7 @@ public class HeapSort {
         left = i * 2;
         right = i * 2 + 1;
         
-        if (left <= size && a[left] > a[i])
+        if (left <= size && a[left] < a[i])
         {
             largest = left;
         } 
@@ -36,7 +36,7 @@ public class HeapSort {
             largest = i;
         }
         
-        if (right <= size && a[right] > a[largest]) 
+        if (right <= size && a[right] < a[largest]) 
         {
 
             largest = right;
@@ -67,12 +67,12 @@ static void Print(int[] input) {
 
         for (int i = size; i >= 0; i--) 
         {
-/*            for (int j = 0; j < input.length; j++) 
+            for (int j = 0; j < input.length; j++) 
             {
             System.out.print(input[j] + " ");
             }
-                System.out.println();
-  */          int temp = input[0];
+                System.out.println("---");
+         int temp = input[0];
             input[0] = input[i];
             input[i] = temp;
             size = size - 1;
@@ -82,7 +82,7 @@ static void Print(int[] input) {
     }
 
     public static void main(String[] args) {
-        int[] a1 = {0,1,2,3,4,5};
+        int[] a1 = {1,2,3,4,5};
         a1 = sort(a1);
         for (int i = 0; i < a1.length; i++) {
             System.out.print(a1[i] + " ");
